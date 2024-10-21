@@ -1,0 +1,12 @@
+#!/bin/bash
+# Add a new attribute 'address' with value '972 Mission street' to documents where name="Holberton school"
+
+# Check if the database name is provided
+if [ -z "$1" ]; then
+  echo "Usage: $0 <database_name>"
+  exit 1
+fi
+
+# Use MongoDB to update documents in the 'school' collection
+mongo "$1" --eval 'db.school.updateMany({ "name": "Holberton school" }, { $set: { "address": "972 Mission street" } })'
+
