@@ -1,12 +1,2 @@
-#!/bin/bash
-# Delete all documents where name="Holberton school" in the 'school' collection
-
-# Check if the database name is provided
-if [ -z "$1" ]; then
-  echo "Usage: $0 <database_name>"
-  exit 1
-fi
-
-# Use MongoDB to delete documents in the 'school' collection
-mongo "$1" --eval 'db.school.deleteMany({ "name": "Holberton school" })'
-
+// Write a script that deletes all documents with name="Holberton school"
+db.school.deleteMany({ "name" : "Holberton school" })
