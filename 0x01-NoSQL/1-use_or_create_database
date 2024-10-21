@@ -1,0 +1,6 @@
+#!/bin/bash
+# Use MongoDB to switch to the database 'my_db' or create it if it doesn't exist
+mongo <<EOF
+use my_db
+EOF
+

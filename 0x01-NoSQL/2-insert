@@ -1,0 +1,12 @@
+#!/bin/bash
+# Insert a document into the 'school' collection in the specified database
+
+# Check if the database name was provided
+if [ -z "$1" ]; then
+  echo "Usage: $0 <database_name>"
+  exit 1
+fi
+
+# Use mongo to insert a document into the 'school' collection in the provided database
+mongo "$1" --eval 'db.school.insertOne({ "name": "Holberton school" })'
+
