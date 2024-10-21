@@ -1,12 +1,2 @@
-#!/bin/bash
-# Display the number of documents in the 'school' collection in the specified database
-
-# Check if the database name is provided
-if [ -z "$1" ]; then
-  echo "Usage: $0 <database_name>"
-  exit 1
-fi
-
-# Use MongoDB to count the documents in the 'school' collection
-mongo "$1" --eval 'print(db.school.countDocuments())'
-
+// Write a script that displays the number of documents in the collection school
+db.school.count()

@@ -1,12 +1,2 @@
-#!/bin/bash
-# List all documents with name="Holberton school" in the 'school' collection in the specified database
-
-# Check if the database name is provided
-if [ -z "$1" ]; then
-  echo "Usage: $0 <database_name>"
-  exit 1
-fi
-
-# Use MongoDB to query and list documents with name="Holberton school" in the 'school' collection
-mongo "$1" --eval 'db.school.find({ "name": "Holberton school" }).forEach(printjson)'
-
+// Write a script that lists all documents with name="Holberton school" in the collection school
+db.school.find({ "name" : "Holberton school" })
